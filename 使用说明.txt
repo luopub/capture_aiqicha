@@ -1,0 +1,8 @@
+1. python 3.8以上
+2. 安装包：
+    pip install scrapy -i https://mirrors.aliyun.com/pypi/simple
+    pip install selenium -i https://mirrors.aliyun.com/pypi/simple
+3. chromedriver.exe必须与chrome浏览器匹配，当前匹配的浏览器是100.xx.yy.zz。如果浏览器升级了，请到这里下载匹配的文件：https://registry.npmmirror.com/binary.html?path=chromedriver/
+4. 公司名称放在company_list.txt文件中，每一行一个公司
+5. 先运行start-chrome.bat启动浏览器，再运行crawl-all.bat抓取，结果放在simple.csv文件
+6. 如果simple.csv用excel或者wps打开是乱码，请百度并下载“notepad++”。 用notepd++打开simple.csv，执行菜单项“编码->转为ANSI”，并保存，再用excel打开就可以了。
