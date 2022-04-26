@@ -112,11 +112,17 @@ class CaptureSimpleSpider(scrapy.Spider, BrowserWrapperMixin):
                 if stock:
                     stock = stock.strip()
 
+            if response.xpath('//div[@class="tags-list"]//button//span[contains(text(),"注销")]').get():
+                zhuxiao = 1
+            else:
+                zhuxiao = 0
+
             yield {
                 'company': response.meta['company'],
                 'create_date': create_date,
                 'stock': stock,
-                'brief': brief
+                'brief': brief,
+                'zhuxiao': zhuxiao
             }
         except Exception as e:
             print(f'公司解析错误：{response.url}, {str(e)}')
